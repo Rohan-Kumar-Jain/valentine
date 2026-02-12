@@ -116,27 +116,46 @@
     btn.style.top = Math.random() * maxY + "px";
   }
 
-  // 🎉 Yes click celebration
+  // 🎉 Yes click celebration + VIDEO
   function yesClick() {
-    document.getElementById("card").innerHTML =
-      `<div class="final">Yayyy! 💕<br>
-       I knew you'd say YES 😍🌹</div>`;
+    document.getElementById("card").innerHTML = `
+      <div class="final">
+        Yayyy! 💕<br>
+        I knew you'd say YES 😍🌹<br><br>
+
+        <video 
+          src="valentine.mp4"
+          controls
+          autoplay
+          playsinline
+          style="
+            width: 100%;
+            max-width: 320px;
+            border-radius: 16px;
+            margin-top: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+          ">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    `;
 
     confetti({
-      particleCount: 200,
-      spread: 70,
+      particleCount: 250,
+      spread: 80,
       origin: { y: 0.6 }
     });
 
     setTimeout(() => {
       confetti({
-        particleCount: 150,
-        spread: 100,
+        particleCount: 200,
+        spread: 120,
         origin: { y: 0.4 }
       });
-    }, 500);
+    }, 600);
   }
 </script>
+
 
 </body>
 </html>
